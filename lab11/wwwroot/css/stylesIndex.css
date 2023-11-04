@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    padding: 10px;
 
     color: dimgray;
     text-decoration: none;
@@ -41,30 +41,6 @@
         background-color: lightgray;
         color: dimgray;
         box-shadow: 0px 0px 10px lightgray;
-    }
-
-    .buttonsContainer_button.model:hover {
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .buttonsContainer_button.viewData:hover {
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .buttonsContainer_button.viewBag:hover {
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .buttonsContainer_button.serviceInj:hover {
-        height: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 
 

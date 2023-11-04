@@ -27,11 +27,41 @@ namespace lab11.Controllers
 
         public IActionResult ViewDataCalc()
         {
+            Random random = new Random();
+
+            int randFirstValue = random.Next(1, 100);
+            int randSecondValue = random.Next(1, 100);
+
+            ViewData["Calc"] = new CalcViewModel
+            {
+                firstValue = randFirstValue,
+                secondValue = randSecondValue,
+                additionResult = randFirstValue + randSecondValue,
+                subtractionResult = randFirstValue - randSecondValue,
+                multiplicationResult = randFirstValue * randSecondValue,
+                divisionResult = randFirstValue / randSecondValue,
+            };
+
             return View();
         }
 
         public IActionResult ViewBagCalc()
         {
+            Random random = new Random();
+
+            int randFirstValue = random.Next(1, 100);
+            int randSecondValue = random.Next(1, 100);
+
+            ViewBag.calc = new CalcViewModel
+            {
+                firstValue = randFirstValue,
+                secondValue = randSecondValue,
+                additionResult = randFirstValue + randSecondValue,
+                subtractionResult = randFirstValue - randSecondValue,
+                multiplicationResult = randFirstValue * randSecondValue,
+                divisionResult = randFirstValue / randSecondValue,
+            };
+
             return View();
         }
 
