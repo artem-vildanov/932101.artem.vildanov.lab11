@@ -1,4 +1,5 @@
-﻿@using lab11.ViewModels;
+﻿
+@using lab11.ViewModels;
 @model CalcViewModel;
 
 
@@ -8,16 +9,13 @@
 <body>
     <main class="main">
         <div class="title">
-            ViewBag Calc
+            Service Injection Calc
         </div>
 
         @{
-            //var calc = ViewData["Calc"] as CalcViewModel;
-
-            var firstVal = ViewBag.calc.firstValue;
-            var secondVal = ViewBag.calc.secondValue;
+            var firstVal = Model.firstValue;
+            var secondVal = Model.secondValue;
         }
-
         <div class="valContainer">
             <p class="valContainer_val">
                 Rand value first: <span class="fw-bold">@firstVal</span>
@@ -29,25 +27,23 @@
         <div class="operationsContainer">
             <div class="operationsContainer_oper">
                 <p class="fw-bold">Add:</p>
-                @firstVal + @secondVal = @ViewBag.calc.additionResult
+                @firstVal + @secondVal = @Model.additionResult
             </div>
             <div class="operationsContainer_oper">
                 <p class="fw-bold">Sub:</p>
-                @firstVal - @secondVal = @ViewBag.calc.subtractionResult
+                @firstVal - @secondVal = @Model.subtractionResult
             </div>
             <div class="operationsContainer_oper">
                 <p class="fw-bold">Div:</p>
-                @firstVal / @secondVal = @ViewBag.calc.divisionResult
+                @firstVal / @secondVal = @Model.divisionResult
             </div>
             <div class="operationsContainer_oper">
                 <p class="fw-bold">Mult:</p>
-                @firstVal * @secondVal = @ViewBag.calc.multiplicationResult
+                @firstVal * @secondVal = @Model.multiplicationResult
             </div>
         </div>
     </main>
 </body>
-
-
 
 
 

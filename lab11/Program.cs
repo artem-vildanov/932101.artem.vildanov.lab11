@@ -1,7 +1,11 @@
+using lab11.Interfaces;
+using lab11.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ICalcService, CalcService>(); // add custom services
 
 var app = builder.Build();
 

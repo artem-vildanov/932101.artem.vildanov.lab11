@@ -1,10 +1,18 @@
-﻿using lab11.ViewModels;
+﻿using lab11.Interfaces;
+using lab11.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace lab11.Controllers
 {
     public class CalcController : Controller
     {
+        private readonly ICalcService _calcService;
+
+        public CalcController(ICalcService calcService)
+        {
+            _calcService = calcService;
+        }
+
         public IActionResult ModelCalc()
         {
             Random random = new Random();
@@ -12,7 +20,7 @@ namespace lab11.Controllers
             int randFirstValue = random.Next(1, 100);
             int randSecondValue = random.Next(1, 100);
 
-            var Calc = new CalcViewModel
+            var calcViewModel = new CalcViewModel
             {
                 firstValue = randFirstValue,
                 secondValue = randSecondValue,
@@ -22,7 +30,7 @@ namespace lab11.Controllers
                 divisionResult = randFirstValue / randSecondValue,
             };
 
-            return View(Calc);
+            return View(calcViewModel);
         }
 
         public IActionResult ViewDataCalc()
@@ -67,7 +75,8 @@ namespace lab11.Controllers
 
         public IActionResult ServiceInjCalc()
         {
-            return View();
+            var calcViewModel = _calcService.createCalcViewModel();
+            return View(calcViewModel);
         }
     }
 }
